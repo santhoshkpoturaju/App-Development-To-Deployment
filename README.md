@@ -1,6 +1,6 @@
 # App-Development-To-Deployment
 
-![Project Overview](tutorial/overview.png)
+![Project Overview](./tutorial/overivew.png)
 
 ---
 
