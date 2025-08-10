@@ -100,7 +100,67 @@ Access the app in your browser:
 
 ## 4. CI/CD and Deployment
 
-- Use **GitHub Actions** to automate building and pushing the container image.
-- Deploy the application to **Kubernetes** using **ArgoCD** for continuous delivery.
+### Automate Container Image Build and Push with GitHub Actions
 
-Refer to the repository documentation and workflow files for more details on
+1. **Configure GitHub Actions Workflow**
+   - Ensure your repository contains a workflow file in the `.github/workflows` directory.  
+   - This workflow should automate building your container image and pushing it to your container registry (e.g., Docker Hub or GitHub Container Registry).
+   - For a real example, review the workflow YAML files in `.github/workflows` within your repository.
+
+2. **Review GitHub Actions Execution**
+   - After pushing changes to your repository, GitHub Actions will automatically trigger the workflow.
+   - To review the execution:
+     - Go to your repository on GitHub.
+     - Click on the **Actions** tab at the top.
+     - Select the latest workflow run to view logs, steps, and results.
+     - Check for any errors or warnings and ensure the image was successfully built and pushed.
+   - You can click into each step of the workflow to see detailed logs and troubleshoot any issues.
+
+---
+
+### Deploy to Kubernetes with ArgoCD
+
+1. **Install ArgoCD**
+   - Follow the official documentation: [ArgoCD Getting Started](https://argo-cd.readthedocs.io/en/stable/getting_started/)
+   - Quick install steps:
+     ```bash
+     kubectl create namespace argocd
+     kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
+     ```
+
+2. **Access ArgoCD Web UI**
+   - For lab environments, use port-forwarding:
+     ```bash
+     kubectl port-forward svc/argocd-server -n argocd 8080:443
+     ```
+   - Access the UI at: [https://127.0.0.1:8080/](https://127.0.0.1:8080/)
+
+3. **Login to ArgoCD**
+   - Retrieve the initial admin password:
+     ```bash
+     kubectl get secret argocd-initial-admin-secret -n argocd -o jsonpath="{.data.password}" | base64 --decode
+     ```
+   - Login with username `admin` and the decoded password.
+
+4. **Update ArgoCD Documentation**
+   - To update your deployment configuration, edit your ArgoCD application manifest (YAML file) to reference the new container image tag pushed by GitHub Actions.
+   - Example snippet:
+     ```yaml
+     spec:
+       source:
+         repoURL: 'https://github.com/<your-username>/App-Development-To-Deployment.git'
+         path: k8s
+         targetRevision: HEAD
+       destination:
+         server: 'https://kubernetes.default.svc'
+         namespace: sampleapp
+     ```
+   - Commit and push changes to your repository. ArgoCD will detect updates and synchronize your application automatically.
+
+5. **Monitor Deployment**
+   - In the ArgoCD Web UI, check the status of your application.
+   - Ensure the new image is deployed and the app is running as expected.
+
+---
+
+For more details, refer to the official [GitHub Actions Documentation](https://docs.github.com/en/actions) and
