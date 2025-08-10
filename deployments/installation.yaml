@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: sample-app
-        image: psanthoshkumar/sample-app:latest
+        image: psanthoshkumar/sample-app
         ports:
         - containerPort: 8000
 ...
