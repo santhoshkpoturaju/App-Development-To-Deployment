@@ -163,4 +163,8 @@ Access the app in your browser:
 
 ---
 
-For more details, refer to the official [GitHub Actions Documentation](https://docs.github.com/en/actions) and
+The last final steps access the application deployed on. K8s using portforwarding
+   - For lab environments, use port-forwarding:
+     ```bash
+     kubectl port-forward svc/sample-app-service -n app1 8081:80
+     ```
