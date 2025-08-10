@@ -9,7 +9,7 @@ def hello_world(request):
     </head>
     <body>
         <h1>Hello, World!</h1>
-        <p>Welcome to your Django Hello World site. this is version 2.0 app</p>
+        <p>Welcome to your Django Hello World site. this is version 3.0 app</p>
     </body>
     </html>
     """
