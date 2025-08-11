@@ -169,48 +169,6 @@ The last final steps access the application deployed on. K8s using portforwardin
      kubectl port-forward svc/sample-app-service -n app1 8081:80
      ```
 
-
----
-
-## Advanced: Best Practices & Further Scope
-
-### GitHub Actions Triggering
-
-> **Main Branch:**  
-> The default workflow triggers on every push, which is simple but not ideal for production.
-
-> **Advanced Branch:**  
-> The workflow is updated to trigger only on GitHub Releases.  
-> This ensures images are built and tagged consistently with release tags, keeping your codebase and deployments clean.
-
-**Advanced Branch Workflow Example:**
-```yaml
-on:
-  release:
-    types: [published]
-
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      # ...existing steps...
-      - name: Build and push
-        uses: docker/build-push-action@v5
-        with:
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/sample-app:${{ github.event.release.tag_name }}
-```
-
-### Dynamic Image Tagging for ArgoCD
-
-For further automation, you can use `kustomize` to dynamically update image tags in your Kubernetes manifests.  
-This allows ArgoCD to deploy the latest released image automatically.
-
-> **Note:**  
-> This project keeps things simple and does not implement dynamic image tag automation.  
-> We will cover this in a future video series
-
-
-
 ---
 
 ## ⭐️ Support & Feedback
