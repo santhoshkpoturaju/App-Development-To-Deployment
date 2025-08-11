@@ -219,7 +219,7 @@ If you found this project helpful, please consider giving it a ⭐️ on GitHub!
 Your support motivates us to create more practical DevOps tutorials and open-source projects.
 
 - **Questions or Suggestions?**  
-  Open an [issue](https://github.com/<your-username>/App-Development-To-Deployment/issues) or start a [discussion](https://github.com/<your-username>/App-Development-To-Deployment/discussions).
+  Open an [issue](https://github.com/<your-username>/App-Development-To-Deployment/issues) or start a [discussion](https://github.com/santhoshkpoturaju/App-Development-To-Deployment/discussions).
 - **Contributions Welcome!**  
   Feel free to submit pull requests to improve the project or documentation.
 
