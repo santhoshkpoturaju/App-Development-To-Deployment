@@ -32,4 +32,4 @@ jobs:
           context: .
           file: ./Dockerfile
           push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/helloworlddjango:v1.0.5
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/helloworlddjango:v1.0.7
