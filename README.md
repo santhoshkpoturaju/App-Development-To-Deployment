@@ -166,7 +166,7 @@ Access the app in your browser:
 The last final steps access the application deployed on. K8s using portforwarding
    - For lab environments, use port-forwarding:
      ```bash
-     kubectl port-forward svc/django-service -n django-app 8081:80
+      kubectl port-forward svc/django-service 8081:80 -n django-app
      ```
 
 ---
