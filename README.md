@@ -191,3 +191,14 @@ Your support motivates us to create more practical DevOps tutorials and open-sou
 ---
 
 Thank you for reading and happy coding! 🚀
+
+Scope to explore further: There are many things to do like use this as framework, repeat same process for ngnix deployment, MongoDB deployment or any application deployments. 
+
+
+## Questions:
+# Which of the following is the correct way to generate a Docker image tag using the release name or version in a GitHub Actions workflow? #
+
+A) tags: ${{ secrets.DOCKERHUB_USERNAME }}/helloworlddjango:${{ github.event.release.tag_name }}
+B) tags: ${{ secrets.DOCKERHUB_USERNAME }}/helloworlddjango:${{ github.ref }}
+c) tags: ${{ secrets.DOCKERHUB_USERNAME }}/helloworlddjango:${{ GITHUB_REF_NAME }}
+D) tags: ${{ secrets.DOCKERHUB_USERNAME }}/shelloworlddjango:release
