@@ -1,10 +1,10 @@
 name: Publish Docker image
 
-# on:
-#   release:
-#     types: [published]
+on:
+  release:
+    types: [published]
 
-on: [push]
+# on: [push]
 
 jobs:
   push_to_registry:
@@ -32,4 +32,6 @@ jobs:
           context: .
           file: ./Dockerfile
           push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/helloworlddjango:v1.0.5
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/helloworlddjango:v1.0.7
+
+
