@@ -1,3 +1,9 @@
+
+## Here is video playlist
+https://youtube.com/playlist?list=PLjgaiFji7j4Rlcb4iiO3VMebRAnK_dYeY&si=cJ9cD2b-tpFwEsd-
+
+
+
 # App-Development-To-Deployment
 
 ![Project Overview](./tutorial/overview.png)
