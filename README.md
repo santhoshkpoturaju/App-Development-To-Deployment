@@ -1,3 +1,9 @@
+
+## Here is YouTube Videos Playlist
+https://youtube.com/playlist?list=PLjgaiFji7j4Rlcb4iiO3VMebRAnK_dYeY&si=cJ9cD2b-tpFwEsd-
+
+
+
 # App-Development-To-Deployment
 
 ![Project Overview](./tutorial/overview.png)
@@ -168,26 +174,3 @@ The last final steps access the application deployed on. K8s using portforwardin
      ```bash
      kubectl port-forward svc/sample-app-service -n app1 8081:80
      ```
-
----
-
-## ⭐️ Support & Feedback
-
-If you found this project helpful, please consider giving it a ⭐️ on GitHub!  
-Your support motivates us to create more practical DevOps tutorials and open-source projects.
-
-- **Questions or Suggestions?**  
-  Open an [issue](https://github.com/santhoshkpoturaju/App-Development-To-Deployment/issues) or start a [discussion](https://github.com/santhoshkpoturaju/App-Development-To-Deployment/discussions).
-- **Contributions Welcome!**  
-  Feel free to submit pull requests to improve the project or documentation.
-
----
-
-## 📚 More Learning
-
-- Check out the [official documentation](https://argo-cd.readthedocs.io/en/stable/) for ArgoCD.
-- Stay tuned for **Series Part 2**, where we’ll cover advanced deployment automation using Kustomize and dynamic image tagging.
-
----
-
-Thank you for reading and happy coding! 🚀
